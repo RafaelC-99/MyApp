@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/app/modules/login/background_widget.dart';
-import 'package:my_app/app/modules/login/login_container.dart';
+
+import 'widgets/background_widget.dart';
+import 'widgets/login_container.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
