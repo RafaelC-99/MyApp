@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
+import 'package:my_app/app/modules/login/widgets/password_buttons.dart';
+import 'package:my_app/app/modules/login/widgets/login_form_field.dart';
+
 import 'container.dart';
 
 class LoginContainer extends StatefulWidget {
@@ -42,39 +45,24 @@ class _LoginContainerState extends State<LoginContainer> {
               ),
             ),
             SizedBox(
-              height: size.height * 0.12,
+              height: size.height * 0.08,
             ),
-            TextFormField(
-              style: const TextStyle(color: Colors.white),
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                enabledBorder: const UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
-                ),
-                floatingLabelBehavior: FloatingLabelBehavior.always,
-                labelText: "Email",
-                labelStyle: TextStyle(
-                  color: Colors.white,
-                  fontSize: size.height * 0.038,
-                ),
-              ),
+            const LoginFormField(
+              labelText: "Email",
+              textInputType: TextInputType.emailAddress,
             ),
             SizedBox(
               height: size.height * 0.06,
             ),
-            TextFormField(
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                enabledBorder: const UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
-                ),
-                floatingLabelBehavior: FloatingLabelBehavior.always,
-                labelText: "Senha",
-                labelStyle: TextStyle(
-                  color: Colors.white,
-                  fontSize: size.height * 0.038,
-                ),
-              ),
+            const LoginFormField(
+              labelText: "Senha",
+              textInputType: TextInputType.visiblePassword,
+              obscureText: true,
+            ),
+            SizedBox(height: size.height * 0.075),
+            PassWordButtons(
+              enter: () {},
+              forgot: () {},
             ),
           ],
         );
